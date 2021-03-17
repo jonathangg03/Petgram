@@ -4,7 +4,7 @@ export const CategoriesContainer = Styled.div`
   display: -webkit-box;
   overflow-x: scroll;
   width: 100%;
-  padding: 6px 0 12px;
+  padding: 12px 0;
 `
 
 export const Category = Styled.div`
