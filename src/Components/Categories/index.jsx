@@ -6,17 +6,17 @@ export const Categories = ({ src = 'https://res.cloudinary.com/midudev/image/upl
     <>
       <CategoriesContainer>
         {
-        [1, 2, 3, 4, 5, 6, 7].map(element => {
-          return (
-            <Category href='#' key={element}>
-              <Link href='#'>
-                <Image src={src} alt={`Image ${element}`} />
-                <div>?</div>
-              </Link>
-            </Category>
-          )
-        })
-      }
+          [1, 2, 3, 4, 5, 6, 7].map(element => {
+            return (
+              <Category href='#' key={element}>
+                <Link href='#'>
+                  <Image src={src} alt={`Image ${element}`} />
+                  <div>?</div>
+                </Link>
+              </Category>
+            )
+          })
+        }
       </CategoriesContainer>
     </>
   )
