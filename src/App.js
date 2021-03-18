@@ -4,8 +4,11 @@ import { Home } from './pages/Home'
 import { NotFound } from './pages/NotFound'
 import { Header } from './Components/Header'
 import { Menu } from './Components/Menu'
+import { Favorites } from './pages/Favorites'
+import { User } from './pages/User'
 import { GlobalStyles } from './GlobalStyles'
-export const App = () => {
+import { Enter } from './pages/Enter'
+export const App = ({ isAuth = false }) => {
   return (
     <>
       <GlobalStyles />
@@ -13,6 +16,17 @@ export const App = () => {
       <Router>
         <Home path='/' />
         <NotFound default />
+        {
+          isAuth
+            ? <>
+              <Favorites path='/favs' />
+              <User path='/user' />
+            </>
+            : <>
+              <Enter path='/favs' />
+              <Enter path='/user' />
+            </>
+        }
       </Router>
       <Menu />
     </>

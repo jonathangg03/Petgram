@@ -5,9 +5,9 @@ import { MenuContainer, Link } from './styles'
 export const Menu = () => {
   return (
     <MenuContainer>
-      <Link href='#'><MdHome /></Link>
-      <Link href='#'><MdFavorite /></Link>
-      <Link href='#'><MdPerson /></Link>
+      <Link to='/'><MdHome /></Link>
+      <Link to='/favs'><MdFavorite /></Link>
+      <Link to='/user'><MdPerson /></Link>
     </MenuContainer>
   )
 }

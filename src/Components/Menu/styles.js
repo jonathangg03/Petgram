@@ -1,5 +1,5 @@
 import Styled from 'styled-components'
-
+import { Link as LinkElement } from '@reach/router'
 export const MenuContainer = Styled.div`
   height: 50px;
   width: 100%;
@@ -10,8 +10,7 @@ export const MenuContainer = Styled.div`
   position: fixed;
   bottom: 0;
 `
-export const Link = Styled.a`
-
+export const Link = Styled(LinkElement)`
   svg {
     font-size: 3rem;
     color: #fefefe
