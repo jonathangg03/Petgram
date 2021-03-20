@@ -2,11 +2,10 @@ import React from 'react'
 import { PhotoCardContainer, PhotoCardItem, PhotoCardImage, LikesContainer, Likes } from './styles'
 import { MdFavoriteBorder } from 'react-icons/md'
 // Like negro: MdFavorite
-// import { graphql } from 'react-apollo'
-import { gql, useQuery } from '@apollo/client'
-// import { gql } from 'apollo-boost'
+import { graphql } from 'react-apollo'
+import { gql } from 'apollo-boost'
 
-const GET_PHOTOS = gql`
+const withPhotos = graphql(gql`
   query getPhotos {
     photos {
       id,
@@ -17,19 +16,15 @@ const GET_PHOTOS = gql`
       liked
     }
   }
-`
+`)
 
-export const PhotoCard = () => {
-  const { loading, error, data } = useQuery(GET_PHOTOS)
-  if (loading) {
-    return (
-      <h1>Loading...</h1>
-    )
+const PhotoCardComponent = ({ data }) => {
+  console.log(data)
+  if (data.loading) {
+    return <h1>Loading...</h1>
   }
-  if (error) {
-    return (
-      <h1>Error...</h1>
-    )
+  if (data.error) {
+    return <h1>Error</h1>
   }
   return (
     <PhotoCardContainer>
@@ -47,5 +42,8 @@ export const PhotoCard = () => {
         })
       }
     </PhotoCardContainer>
+    // <h1>Hola</h1>
   )
 }
+
+export const PhotoCard = withPhotos(PhotoCardComponent)

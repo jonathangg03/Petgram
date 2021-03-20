@@ -1,12 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
-// import Client from 'apollo-boost'
-import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client'
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
 import { App } from './App'
 
 const client = new ApolloClient({
-  uri: 'https://petgram-server-khaki-psi.vercel.app/graphql',
-  cache: new InMemoryCache()
+  uri: 'https://petgram-server-khaki-psi.vercel.app/graphql'
 })
 
 render(
