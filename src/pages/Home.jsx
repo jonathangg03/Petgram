@@ -1,12 +1,12 @@
 import React from 'react'
 import { Categories } from '../Components/Categories'
-import { PhotoCard } from '../Components/PhotoCard'
+import { PhotoCardContainer } from '../containers/PhotoCardContainer'
 
 export const Home = () => {
   return (
     <>
       <Categories />
-      <PhotoCard />
+      <PhotoCardContainer />
     </>
   )
 }
