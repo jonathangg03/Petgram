@@ -2,18 +2,45 @@ import React from 'react'
 import { PhotoCardContainer, PhotoCardItem, PhotoCardImage, LikesContainer, Likes } from './styles'
 import { MdFavoriteBorder } from 'react-icons/md'
 // Like negro: MdFavorite
+// import { graphql } from 'react-apollo'
+import { gql, useQuery } from '@apollo/client'
+// import { gql } from 'apollo-boost'
 
-export const PhotoCard = ({ src = 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', likes = 0 }) => {
+const GET_PHOTOS = gql`
+  query getPhotos {
+    photos {
+      id,
+      categoryId,
+      src,
+      likes,
+      userId,
+      liked
+    }
+  }
+`
+
+export const PhotoCard = () => {
+  const { loading, error, data } = useQuery(GET_PHOTOS)
+  if (loading) {
+    return (
+      <h1>Loading...</h1>
+    )
+  }
+  if (error) {
+    return (
+      <h1>Error...</h1>
+    )
+  }
   return (
     <PhotoCardContainer>
       {
-        [1, 2, 3, 4, 5].map(element => {
+        data.photos.map(photo => {
           return (
-            <PhotoCardItem key={element}>
-              <PhotoCardImage src={src} alt={`Photo: ${element}`} />
+            <PhotoCardItem key={photo.id}>
+              <PhotoCardImage src={photo.src} alt={`Photo: ${photo.id}`} />
               <LikesContainer>
                 <MdFavoriteBorder />
-                <Likes>{likes} Me gusta</Likes>
+                <Likes>{photo.likes} Me gusta</Likes>
               </LikesContainer>
             </PhotoCardItem>
           )

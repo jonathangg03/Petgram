@@ -28,6 +28,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.12",
     "@reach/router": "^1.3.4",
     "apollo-boost": "^0.4.9",
     "graphql": "^15.5.0",

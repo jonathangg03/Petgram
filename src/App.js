@@ -21,11 +21,11 @@ export const App = ({ isAuth = false }) => {
             ? <>
               <Favorites path='/favs' />
               <User path='/user' />
-            </>
+              </>
             : <>
               <Enter path='/favs' />
               <Enter path='/user' />
-            </>
+              </>
         }
       </Router>
       <Menu />
