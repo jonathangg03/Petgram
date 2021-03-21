@@ -25,4 +25,5 @@ export const Image = Styled.img`
   height: 75px;
   object-fit: cover;
   box-shadow: 0px 1px 10px #000000cf;
+  margin-bottom: 5px;
 `

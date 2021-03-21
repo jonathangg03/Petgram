@@ -1,12 +1,12 @@
 import React from 'react'
-import { Categories } from '../Components/Categories'
+import { CategoriesFromQuery } from '../containers/CategoriesFromQuery'
 import { PhotoCardContainer } from '../containers/PhotoCardContainer'
 
 export const Home = () => {
   return (
     <>
-      <Categories />
-      <PhotoCardContainer />
+      <CategoriesFromQuery />
+      <PhotoCardContainer categoryId={2} />
     </>
   )
 }

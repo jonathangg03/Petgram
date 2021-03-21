@@ -8,6 +8,7 @@ import { Favorites } from './pages/Favorites'
 import { User } from './pages/User'
 import { GlobalStyles } from './GlobalStyles'
 import { Enter } from './pages/Enter'
+import { Details } from './pages/Details'
 export const App = ({ isAuth = false }) => {
   return (
     <>
@@ -27,6 +28,7 @@ export const App = ({ isAuth = false }) => {
               <Enter path='/user' />
               </>
         }
+        <Details path='/detail/:id' />
       </Router>
       <Menu />
     </>
