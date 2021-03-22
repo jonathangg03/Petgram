@@ -16,6 +16,7 @@ export const App = ({ isAuth = false }) => {
       <Header />
       <Router>
         <Home path='/' />
+        <Home path='/pet/:id' />
         <NotFound default />
         {
           isAuth

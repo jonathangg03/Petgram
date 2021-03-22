@@ -6,7 +6,7 @@ import { MdFavoriteBorder } from 'react-icons/md'
 export const PhotoCard = ({ src, id, likes }) => {
   return (
     <PhotoCardContainer>
-      <Link to={`detail/${id}`}>
+      <Link to={`/detail/${id}`}>
         <PhotoCardItem>
           <PhotoCardImage src={src} alt={`Photo: ${id}`} />
         </PhotoCardItem>

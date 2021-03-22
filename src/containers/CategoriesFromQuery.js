@@ -9,8 +9,7 @@ const GET_CATEGORIES = gql`
     categories {
       id,
       emoji,
-      cover,
-      path
+      cover
     }
   }
 `
@@ -30,7 +29,6 @@ export const CategoriesFromQuery = () => {
             <CategoriesContainer>
               {
                 categories.map(category => {
-                  console.log(category)
                   return (
                     <Categories key={category.id} {...category} />
                   )

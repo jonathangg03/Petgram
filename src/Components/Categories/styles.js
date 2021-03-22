@@ -1,4 +1,5 @@
 import Styled from 'styled-components'
+import { Link as LinkContainer } from '@reach/router'
 
 export const CategoriesContainer = Styled.div`
   display: -webkit-box;
@@ -12,7 +13,7 @@ export const Category = Styled.div`
   margin: 0 10px;
 `
 
-export const Link = Styled.a`
+export const Link = Styled(LinkContainer)`
   color: black;
   text-decoration: none;
   font-size: 1.5rem;
