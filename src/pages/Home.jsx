@@ -1,11 +1,11 @@
 import React from 'react'
-import { CategoriesFromQuery } from '../containers/CategoriesFromQuery'
+import { ListOfCategories } from '../Components/ListOfCategories'
 import { PhotoCardContainer } from '../containers/PhotoCardContainer'
 
 export const Home = ({ id }) => {
   return (
     <>
-      <CategoriesFromQuery />
+      <ListOfCategories />
       <PhotoCardContainer categoryId={id} />
     </>
   )

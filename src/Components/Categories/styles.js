@@ -1,13 +1,6 @@
 import Styled from 'styled-components'
 import { Link as LinkContainer } from '@reach/router'
 
-export const CategoriesContainer = Styled.div`
-  display: -webkit-box;
-  overflow-x: scroll;
-  width: 100%;
-  padding: 12px 0;
-`
-
 export const Category = Styled.div`
   width: 75px;
   margin: 0 10px;

@@ -1,23 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Category, Image, Link, Title } from './styles'
+import React from 'react'
+import { Category, Image, Link } from './styles'
 
-export const Categories = ({ cover, emoji, id }) => {
-  const Categories = useRef(null)
-  const [isOn, setIsOn] = useState(true)
-  useEffect(() => {
-    const intersection = new window.IntersectionObserver((entries) => {
-      setIsOn(entries[0].isIntersecting)
-    })
-    intersection.observe(Categories.current)
-  }, [isOn])
-
+export const Categories = ({ cover = 'https://res.cloudinary.com/midudev/image/upload/w_150/v1555671700/category_cats.jpg', emoji = '?', id = 0 }) => {
   return (
-    <div ref={Categories}>
-      {
-        !isOn && (
-          <Title>Hola</Title>
-        )
-      }
+    <div>
       <Category>
         <Link to={`/pet/${id}`}>
           <Image src={cover} alt={`Image ${id}`} />

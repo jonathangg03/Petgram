@@ -2,7 +2,6 @@ import React from 'react'
 import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
 import { Categories } from '../Components/Categories'
-import { CategoriesContainer } from '../Components/Categories/styles'
 
 const GET_CATEGORIES = gql`
   query getCategories {
@@ -26,7 +25,7 @@ export const CategoriesFromQuery = () => {
           }
           const { categories } = data
           return (
-            <CategoriesContainer>
+            <>
               {
                 categories.map(category => {
                   return (
@@ -34,7 +33,7 @@ export const CategoriesFromQuery = () => {
                   )
                 })
               }
-            </CategoriesContainer>
+            </>
           )
         }
       }
