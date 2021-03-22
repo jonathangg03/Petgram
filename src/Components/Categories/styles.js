@@ -28,3 +28,7 @@ export const Image = Styled.img`
   box-shadow: 0px 1px 10px #000000cf;
   margin-bottom: 5px;
 `
+export const Title = Styled.h1`
+  position: fixed;
+  top: 0;
+`
