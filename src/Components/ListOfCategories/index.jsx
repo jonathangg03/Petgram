@@ -7,17 +7,19 @@ export const ListOfCategories = () => {
   const [isOn, setIsOn] = useState(true)
   useEffect(() => {
     const intersection = new window.IntersectionObserver((entries) => {
-      setIsOn(entries[0].isIntersecting)
+      const { isIntersecting } = entries[0]
+      if (!isIntersecting) {
+        setIsOn(false)
+      } else {
+        setIsOn(true)
+      }
     })
     intersection.observe(Categories.current)
-  }, [])
+  }, [Categories])
   return (
     <div ref={Categories}>
       <CategoriesContainer isOn={isOn}>
         <CategoriesFromQuery />
-        {!isOn && (
-          <CategoriesFromQuery />
-        )}
       </CategoriesContainer>
     </div>
   )

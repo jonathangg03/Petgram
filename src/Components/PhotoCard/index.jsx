@@ -1,9 +1,11 @@
 import React from 'react'
 import { PhotoCardContainer, Link, PhotoCardItem, PhotoCardImage, LikesContainer, Likes } from './styles'
-import { MdFavoriteBorder } from 'react-icons/md'
-// Like negro: MdFavorite
+import { LikePhotoMutation } from '../../containers/LikePhotoMutation'
+import { FavoriteButton } from '../FavoriteButton'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 
 export const PhotoCard = ({ src, id, likes }) => {
+  const [liked, setLiked] = useLocalStorage(`item-${id}`, false)
   return (
     <PhotoCardContainer>
       <Link to={`/detail/${id}`}>
@@ -12,7 +14,23 @@ export const PhotoCard = ({ src, id, likes }) => {
         </PhotoCardItem>
       </Link>
       <LikesContainer>
-        <MdFavoriteBorder />
+        <LikePhotoMutation>
+          {
+            (toggleLike) => {
+              const handleToggleLike = () => {
+                !liked && toggleLike({
+                  variables: {
+                    input: { id }
+                  }
+                })
+                setLiked(!liked)
+              }
+              return (
+                <FavoriteButton onClick={handleToggleLike} liked={liked} />
+              )
+            }
+          }
+        </LikePhotoMutation>
         <Likes>{likes} Me gusta</Likes>
       </LikesContainer>
     </PhotoCardContainer>
