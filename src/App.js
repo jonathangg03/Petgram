@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Router } from '@reach/router'
 import { Home } from './pages/Home'
 import { NotFound } from './pages/NotFound'
@@ -9,7 +9,9 @@ import { User } from './pages/User'
 import { GlobalStyles } from './GlobalStyles'
 import { Enter } from './pages/Enter'
 import { Details } from './pages/Details'
-export const App = ({ isAuth = false }) => {
+import { Context } from './Context'
+export const App = () => {
+  const { isAuth } = useContext(Context)
   return (
     <>
       <GlobalStyles />
@@ -18,18 +20,18 @@ export const App = ({ isAuth = false }) => {
         <Home path='/' />
         <Home path='/pet/:id' />
         <NotFound default />
+        <Details path='/detail/:id' />
         {
           isAuth
             ? <>
               <Favorites path='/favs' />
               <User path='/user' />
-              </>
+            </>
             : <>
               <Enter path='/favs' />
               <Enter path='/user' />
-              </>
+            </>
         }
-        <Details path='/detail/:id' />
       </Router>
       <Menu />
     </>

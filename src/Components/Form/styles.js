@@ -31,3 +31,12 @@ export const Button = Styled.button`
   font-weight: bold;
   border-radius: 3px;
 `
+
+export const ErrorText = Styled.p`
+  width: 285px;
+  margin: 0 auto;
+  color: #ff9800;
+  font-weight: bold;
+  padding-top: 10px;
+  font-size: 1.2rem;
+`
