@@ -18,7 +18,7 @@ export const PhotoCard = ({ src, id, likes }) => {
           {
             (toggleLike) => {
               const handleToggleLike = () => {
-                !liked && toggleLike({
+                toggleLike({
                   variables: {
                     input: { id }
                   }
