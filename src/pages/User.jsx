@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from '../Context'
 import { Layout } from '../Components/Layout'
 
-export const User = () => {
+export default () => {
   const { removeAuth } = useContext(Context)
   return (
     <Layout title='Usuario' description='Página para que el usuario pueda hacer logout'>

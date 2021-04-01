@@ -6,7 +6,7 @@ import { useFormValues } from '../hooks/useFormValues'
 import { Context } from '../Context'
 import { Layout } from '../Components/Layout'
 
-export const Enter = () => {
+export default () => {
   const { activateAuth } = useContext(Context)
   const [formSignupValues, setFormSignupValues] = useFormValues()
   const [formLoginValues, setFormLoginValues] = useFormValues()

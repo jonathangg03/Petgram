@@ -12,6 +12,6 @@ const HomeComponent = ({ id }) => {
   )
 }
 
-export const Home = memo(HomeComponent, (prevProps, props) => {
+export default memo(HomeComponent, (prevProps, props) => {
   return prevProps.id === props.id
 })
