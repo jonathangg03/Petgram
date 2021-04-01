@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, memo } from 'react'
 import { CategoriesContainer } from './styles'
 import { CategoriesFromQuery } from '../../containers/CategoriesFromQuery'
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const Categories = useRef(null)
   const [isOn, setIsOn] = useState(true)
   useEffect(() => {
@@ -24,3 +24,5 @@ export const ListOfCategories = () => {
     </div>
   )
 }
+
+export const ListOfCategories = memo(ListOfCategoriesComponent)
