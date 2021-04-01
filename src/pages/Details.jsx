@@ -1,8 +1,11 @@
 import React from 'react'
 import { SinglePhotoCard } from '../containers/SinglePhotoCard'
+import { Layout } from '../Components/Layout'
 
 export const Details = ({ id }) => {
   return (
-    <SinglePhotoCard id={id} />
+    <Layout title='Detalles' description={`Detalles de la foto ${id}`}>
+      <SinglePhotoCard id={id} />
+    </Layout>
   )
 }

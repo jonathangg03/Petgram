@@ -4,6 +4,7 @@ import { SignupMutation } from '../containers/SignupMutation'
 import { LoginMutation } from '../containers/LoginMutation'
 import { useFormValues } from '../hooks/useFormValues'
 import { Context } from '../Context'
+import { Layout } from '../Components/Layout'
 
 export const Enter = () => {
   const { activateAuth } = useContext(Context)
@@ -16,7 +17,7 @@ export const Enter = () => {
     })
   }
   return (
-    <div>
+    <Layout title='Ingresar' description='Ingresar a la página para registrarse o loguearse'>
       <SignupMutation>
         {
           (signup, { data, loading, error }) => {
@@ -70,6 +71,6 @@ export const Enter = () => {
           }
         }
       </LoginMutation>
-    </div>
+    </Layout>
   )
 }

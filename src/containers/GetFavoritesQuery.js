@@ -1,6 +1,7 @@
 import React from 'react'
 import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
+import { PhotoCard } from '../Components/PhotoCard'
 
 const GET_FAVORITES = gql`
   query getFavs {
@@ -26,7 +27,17 @@ export const GetFavoritesQuery = () => {
           return <p>Error: {error.message}</p>
         }
         console.log(data)
-        return <h1>Hola</h1>
+        return (
+          <>
+            {
+            data.favs.map(favorite => {
+              return (
+                <PhotoCard {...favorite} key={favorite.id} />
+              )
+            })
+          }
+          </>
+        )
       }
     }
     </Query>
