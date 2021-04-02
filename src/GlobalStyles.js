@@ -17,9 +17,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    margin: 0 auto;
     display: block;
-    width: 90%;
+    width: 100%;
     height: 32px;
     border: none;
     background-color: #ff9800;

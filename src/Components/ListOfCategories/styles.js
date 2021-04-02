@@ -10,14 +10,14 @@ export const CategoriesContainer = Styled.div`
     props => !props.isOn && css`
       position: fixed;
       top: 10px;
-      background-color: #fff;
-      height: 53px;
-      width: 160px;
-      left: 80px;
+      background-color: #0000004d;
+      height: 17%;
+      width: 70%;
+      left: 16%;
       border-radius: 60px;
       padding: 3px 5px;
       p {
-        font-size: 8px;
+        font-size: 70%;
       }
     `
   }

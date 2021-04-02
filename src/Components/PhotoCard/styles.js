@@ -2,7 +2,8 @@ import Styled from 'styled-components'
 import { Link as LinkContainer } from '@reach/router'
 
 export const PhotoCardContainer = Styled.div`
-  margin-bottom: 20px;
+  max-width: 600px;
+  margin: 0 auto 20px;
 `
 
 export const Link = Styled(LinkContainer)`

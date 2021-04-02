@@ -4,6 +4,8 @@ import { Link as LinkContainer } from '@reach/router'
 export const Category = Styled.div`
   width: 22%;
   height: 68%;
+  max-width: 73px;
+  max-height: 71px;
   margin: 0 3%;
 `
 

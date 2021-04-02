@@ -5,6 +5,7 @@ import { CategoriesFromQuery } from '../../containers/CategoriesFromQuery'
 const ListOfCategoriesComponent = () => {
   const Categories = useRef(null)
   const [isOn, setIsOn] = useState(true)
+
   useEffect(() => {
     const intersection = new window.IntersectionObserver((entries) => {
       const { isIntersecting } = entries[0]
