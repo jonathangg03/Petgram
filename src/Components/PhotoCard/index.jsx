@@ -7,6 +7,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
 
 export const PhotoCard = ({ src, id, likes, pageFavorite }) => {
   const [liked, setLiked] = useLocalStorage(`item-${id}`, false)
+  const userAuthenticated = window.sessionStorage.getItem('token')
   return (
     <PhotoCardContainer>
       <Link to={`/detail/${id}`}>
@@ -19,12 +20,11 @@ export const PhotoCard = ({ src, id, likes, pageFavorite }) => {
           {
             (toggleLike) => {
               const handleToggleLike = () => {
-                toggleLike({
+                userAuthenticated && toggleLike({
                   variables: {
                     input: { id }
                   }
-                })
-                setLiked(!liked)
+                }).then(res => setLiked(!liked))
               }
               return (
                 <>

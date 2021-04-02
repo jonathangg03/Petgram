@@ -1,5 +1,5 @@
 import React, { useContext, lazy, Suspense } from 'react'
-import { Router } from '@reach/router'
+import { Redirect, Router } from '@reach/router'
 import { GlobalStyles } from './GlobalStyles'
 import { Context } from './Context'
 const Home = lazy(() => import('./pages/Home'))
@@ -18,11 +18,12 @@ export const App = () => {
         <Home path='/pet/:id' />
         <NotFound default />
         <Details path='/detail/:id' />
-        {
-          isAuth
-            ? <><Favorites path='/favs' /> <User path='/user' /></>
-            : <><Enter path='/favs' /><Enter path='/user' /></>
-        }
+        {!isAuth && <Enter path='/login' />}
+        {!isAuth && <Redirect noThrow from='/favs' to='/login' />}
+        {!isAuth && <Redirect noThrow from='/user' to='/login' />}
+        {isAuth && <Redirect from='/login' to='/' />}
+        <User path='/user' />
+        <Favorites path='/favs' />
       </Router>
     </Suspense>
   )

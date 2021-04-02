@@ -17,7 +17,7 @@ export const Form = ({ actionForm, onSubmit, values, onChange, children }) => {
 Form.propTypes = {
   actionForm: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
-  values: PropTypes.string.isRequired,
+  values: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
   children: PropTypes.node
 }
