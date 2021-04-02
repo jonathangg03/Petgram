@@ -12,5 +12,14 @@
   <noscript>
     <h1>Este navegador no tiene JavaScript activado. Porfavor activalo para poder usar esta aplicación.</h1>
   </noscript>
+  <script>
+    if ('serviceWorker' in navigator){
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+        .then(res => console.log('El SW se registro correctamente'))
+        .catch(error => console.log('El SW tuvo el siguiente error al registrarse: ' + error))
+      })
+    }
+  </script>
 </body>
 </html>
