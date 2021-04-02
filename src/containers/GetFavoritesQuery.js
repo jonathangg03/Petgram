@@ -32,7 +32,7 @@ export const GetFavoritesQuery = () => {
             {
             data.favs.map(favorite => {
               return (
-                <PhotoCard {...favorite} key={favorite.id} />
+                <PhotoCard {...favorite} key={favorite.id} pageFavorite />
               )
             })
           }

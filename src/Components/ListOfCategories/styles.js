@@ -13,7 +13,7 @@ export const CategoriesContainer = Styled.div`
       background-color: #0000004d;
       height: 17%;
       width: 70%;
-      left: 16%;
+      left: 15%;
       border-radius: 60px;
       padding: 3px 5px;
       p {

@@ -5,7 +5,7 @@ import { LikePhotoMutation } from '../../containers/LikePhotoMutation'
 import { FavoriteButton } from '../FavoriteButton'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 
-export const PhotoCard = ({ src, id, likes }) => {
+export const PhotoCard = ({ src, id, likes, pageFavorite }) => {
   const [liked, setLiked] = useLocalStorage(`item-${id}`, false)
   return (
     <PhotoCardContainer>
@@ -27,7 +27,13 @@ export const PhotoCard = ({ src, id, likes }) => {
                 setLiked(!liked)
               }
               return (
-                <FavoriteButton onClick={handleToggleLike} liked={liked} />
+                <>
+                  {
+                    !pageFavorite && (
+                      <FavoriteButton onClick={handleToggleLike} liked={liked} favorite={pageFavorite} />
+                    )
+                  }
+                </>
               )
             }
           }
@@ -41,5 +47,6 @@ export const PhotoCard = ({ src, id, likes }) => {
 PhotoCard.propTypes = {
   src: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  likes: PropTypes.number.isRequired
+  likes: PropTypes.number.isRequired,
+  pageFavorite: PropTypes.bool
 }
