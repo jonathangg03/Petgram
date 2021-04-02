@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { PhotoCardContainer, Link, PhotoCardItem, PhotoCardImage, LikesContainer, Likes } from './styles'
 import { LikePhotoMutation } from '../../containers/LikePhotoMutation'
 import { FavoriteButton } from '../FavoriteButton'
@@ -35,4 +36,10 @@ export const PhotoCard = ({ src, id, likes }) => {
       </LikesContainer>
     </PhotoCardContainer>
   )
+}
+
+PhotoCard.propTypes = {
+  src: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  likes: PropTypes.number.isRequired
 }

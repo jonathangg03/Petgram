@@ -1,4 +1,5 @@
 import React, { memo } from 'react'
+import PropTypes from 'prop-types'
 import { ListOfCategories } from '../Components/ListOfCategories'
 import { PhotoCardContainer } from '../containers/PhotoCardContainer'
 import { Layout } from '../Components/Layout'
@@ -10,6 +11,10 @@ const HomeComponent = ({ id }) => {
       <PhotoCardContainer categoryId={id} />
     </Layout>
   )
+}
+
+HomeComponent.propTypes = {
+  id: PropTypes.string
 }
 
 export default memo(HomeComponent, (prevProps, props) => {

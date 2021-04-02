@@ -1,5 +1,6 @@
 import React from 'react'
 import { FormContainer, Title, Input, ErrorText } from './styles'
+import PropTypes from 'prop-types'
 
 export const Form = ({ actionForm, onSubmit, values, onChange, children }) => {
   return (
@@ -11,4 +12,12 @@ export const Form = ({ actionForm, onSubmit, values, onChange, children }) => {
       <ErrorText>{children}</ErrorText>
     </FormContainer>
   )
+}
+
+Form.propTypes = {
+  actionForm: PropTypes.string,
+  onSubmit: PropTypes.func.isRequired,
+  values: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  children: PropTypes.node
 }

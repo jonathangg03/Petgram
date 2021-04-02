@@ -1,7 +1,8 @@
 import React from 'react'
 import { Category, Image, Link } from './styles'
+import PropTypes from 'prop-types'
 
-export const Categories = ({ cover = 'https://res.cloudinary.com/midudev/image/upload/w_150/v1555671700/category_cats.jpg', emoji = '?', id = 0 }) => {
+export const Categories = ({ cover, emoji = '?', id }) => {
   return (
     <Category>
       <Link to={`/pet/${id}`}>
@@ -10,4 +11,10 @@ export const Categories = ({ cover = 'https://res.cloudinary.com/midudev/image/u
       </Link>
     </Category>
   )
+}
+
+Categories.propTypes = {
+  cover: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  emoji: PropTypes.string
 }
